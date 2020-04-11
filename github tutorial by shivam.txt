@@ -1,0 +1,124 @@
+Step 1:
+****If you're using git for the first time then you need to configure git from your terminal or git bash.****
+    1. Open your terminal and set your username.
+        git config --global user.name username
+    2. Set your email now/
+        git config --global user.email emailid
+    3. To view your configuration details
+        git config --list
+****************************************************************************************************************************
+
+Step 2:
+****Go to the directory where you are working right now and initialize it. Only required to be done once.****
+    git init
+****************************************************************************************************************************
+
+Step 3:
+****To show all the available files and folders including the hidden****\
+    ls -lart
+****************************************************************************************************************************
+
+Step 4:
+****To check the status of current project.****
+    git status
+****************************************************************************************************************************
+
+Step 5:
+****To stage a file from untracked****
+    git add filename
+****To stage all files from untracked present only in the root directory****
+    git add .
+****To stage all files from untracked present in the complete project****
+    git add -all or git add -A
+****To remove a file from staged****
+    git rm --cached filename
+****************************************************************************************************************************
+
+Step 6:
+****To commit the changes you have made in your project****
+    git commit -m 'message'
+****************************************************************************************************************************
+
+Step 7:
+****If you want to undo some changes in file to the last commit****
+    git checkout filename or git checkout -f (for all modified files)
+****************************************************************************************************************************
+
+Step 8:
+****To add file to stage and commit them at the same time using one command****
+    git commit -a -m 'message'
+****************************************************************************************************************************
+
+Step 9:
+****To show log****
+    git log
+****To show log file with last n number of changes****
+    git log -p -no_of_logs
+****************************************************************************************************************************
+
+Step 10:
+****To ignore some files from git tracking****
+    1. Create a .gitignore file in the root directory
+        touch .gitignore
+    2. Write the name of files you want to ignore.
+    3. If you want to ignore a file only where .gitignore file is present.
+        write file name as /filename
+    4. If you want to ignore the file present in anywhere in the project.
+        write simply the file name\
+    5. If you want to ignore all the files of certain extensions.
+        write the file name as *.extenison
+    6. If you want to ingore a folder
+        write the folder name like this foldername/
+****************************************************************************************************************************
+
+Step 11:
+****To create another branch****
+    git branch branchname
+****To show all the branches available****
+    git branch
+****To switch to another branch****
+    git checkout branchname
+****To create another branch and switch to that at the same time****
+    git checkout -b branchname
+Note: If you create any changes to files from another branch than master, then the changes will available to only that particular branch. If i want to merge those changes to my master branch then,
+    1. Switch back to master branch.
+        git checkout master
+    2. Merge that branch with master branch.
+        git merge branchname
+****************************************************************************************************************************
+
+Step 12:
+****Synchronize the git repository with the local repository****
+    1. Create a repository at github or gitlab.
+    2. Copy the repository url and create a remote link on your terminal
+        git remote add origin url (Here origin will store the url in it, you can change the name if you want.)
+    3. To check all the remote urls available
+        git remote
+    4. To check all the fetch and push urls
+        git remote -v
+    Note: If you have created a private repository then you need to follow these steps.
+            a. Generate ssh key to give the access to your system to make changes to repository.
+                Go to git settings, click on SSH and GPG keys. Then on the right window click on the generate ssh key.
+                On the new page click on generate a new ssh key and add it to the ssh-agent. In the generate new ssh key section, copy the code given and replace the email with your registered email id.
+                After that just paste the code to terminal. After generating new ssh key, go back to the github ssh page and from there copy the eval code and paste it in your terminal to generate agent id.
+                After that copy the ssh add command from github and paste it in the terminal. Run <cat ssh_id> on the terminal to get all the content of ssh key, copy it then go to github, click on new ssh key.
+                Give it a title and paste ssh key content on the below box.
+            b. Change the origin url to this new ssh key url.
+                For this just copy the ssh url from github. Open terminal and run
+                    git remote set-url origin ssh_url
+****************************************************************************************************************************
+
+Step 13:
+****Excahnge the code between local and remote repository****
+    1. If the remote contains some file and so does local then first pull those changes into local
+        git pull origin master --allow-unrelated-history
+    2. If not then skip last step and process the push command to push your changes from local to remote.
+        git push origin master
+****************************************************************************************************************************
+
+Step 14:
+****To clone git repository into your local system****
+    Git clone repository_url
+****************************************************************************************************************************
+
+                                    **************   End of File   ***************
