@@ -111,7 +111,7 @@ Step 12:
 Step 13:
 ****Excahnge the code between local and remote repository****
     1. If the remote contains some file and so does local then first pull those changes into local
-        git pull origin master --allow-unrelated-history
+        git pull origin master --allow-unrelated-histories
     2. If not then skip last step and process the push command to push your changes from local to remote.
         git push origin master
 ****************************************************************************************************************************
